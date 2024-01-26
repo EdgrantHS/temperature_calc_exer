@@ -1,15 +1,19 @@
-import './App.css';
+import './TempConvert.css';
 import React from 'react';
 
-class App extends React.Component {
-
+class TempConvert extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       suhu: 0,
       sumber: 'celcius',
       tujuan: 'celcius',
-      hasil: 0
+      hasil: 0,
+
+      renderedSuhu: 0,
+      renderedSumber: 'celcius',
+      renderedTujuan: 'celcius',
+      renderedHasil: 0
     }
 
     this.calculate = this.calculate.bind(this);
@@ -18,8 +22,10 @@ class App extends React.Component {
     this.handleChangeSumber = this.handleChangeSumber.bind(this);
     this.handleChangeTujuan = this.handleChangeTujuan.bind(this);
     this.handleCopy = this.handleCopy.bind(this);
+    this.renderElement = this.renderElement.bind(this);
   }
 
+  
   handleChangeSuhu = (event) => {
     this.setState({
       suhu: event.target.value,
@@ -38,14 +44,23 @@ class App extends React.Component {
     });
   }
 
+  renderElement(){
+    this.setState({
+      renderedSuhu: this.state.suhu,
+      renderedSumber: this.state.sumber,
+      renderedTujuan: this.state.tujuan,
+      renderedHasil: this.state.hasil
+    });
+  }
+
   handleSubmit(event){
     event.preventDefault();
     this.calculate();
   }
 
   handleCopy(){
-    const { hasil } = this.state;
-    navigator.clipboard.writeText(hasil.toString());
+    const { renderedHasil } = this.state;
+    navigator.clipboard.writeText(renderedHasil.toString());
   }
 
   calculate(){
@@ -82,14 +97,13 @@ class App extends React.Component {
 
     this.setState({
       hasil: hasil
-    });
-
+    }, this.renderElement);
   }
 
   render()  {
     return (
       <div className="container p-3 g-4">
-        <div className="text-center h1 mb-2 bg-light pb-2 edge-round">Temperature Converter</div>
+        <div className="text-center h1 mb-2 bg-light pb-2 edge-round">Temperature Converter GIO</div>
         <hr />
 
         <div className="row">
@@ -203,10 +217,10 @@ class App extends React.Component {
 
             <div className="lead text-center">
               <b>From:</b> <br /> 
-              {this.state.suhu} {this.state.sumber} <br />
+              {this.state.renderedSuhu} {this.state.renderedSumber} <br />
               <hr />
               <b>To:</b> <br />
-              {this.state.hasil} {this.state.tujuan}
+              {this.state.renderedHasil} {this.state.renderedTujuan}
             </div>
             <hr />
 
@@ -219,9 +233,12 @@ class App extends React.Component {
             </div>
           </div></div>  
         </div> 
+        <div className="d-block text-center py-5">
+          <button className='btn btn-secondary' onClick={this.props.back}>Back</button>
+        </div>
       </div>
     );
   }
 }
 
-export default App;
+export default TempConvert;
