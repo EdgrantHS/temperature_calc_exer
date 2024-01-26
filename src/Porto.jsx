@@ -4,22 +4,6 @@ import currencyapi from '@everapi/currencyapi-js'
 
 const API_KEY = 'cur_live_rhBV17AZGtpuROrvnr68pVwfnVRuxjnH0rN2bK1O';
 
-const options = [
-  'USD',
-  'EUR',
-  'JPY',
-  'GBP',
-  'AUD',
-  'CAD',
-  'CHF',
-  'CNY',
-  'HKD',
-  'NZD',
-  'SEK',
-  'KRW',
-  'IDR'
-]
-
 class CurrConvert  extends React.Component {
   constructor(props) {
     super(props);

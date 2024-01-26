@@ -4,11 +4,6 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Pemilihan from './Pemilihan';
 
-// const renderTemperature = true;
-const renderTemperature = false;
-const renderCurrency = true;
-// const renderCurrency = false;
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

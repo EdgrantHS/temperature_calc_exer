@@ -57,12 +57,12 @@ class Pemilihan extends React.Component {
               <button className="btn btn-primary btn-block py-2 btn-lg" onClick={this.handlePilihSuhu}>Temperature Calculator</button>
             </div>
             <div className="col-md-6 my-2">
-              <button className="btn btn-primary btn-block py-2 btn-lg" onClick={this.handlePilihCurrency}>Currency Calculator</button>
+              <button className="btn btn-secondary btn-block py-2 btn-lg" onClick={this.handlePilihCurrency}>Currency Calculator</button>
             </div>
           </div>
           <div className="row text-center">
             <div className="col-12 py-4">
-              <button className="btn btn-secondary btn-lg px-5 shadow" onClick={this.handlePorto}>Portfolio</button>
+              <button className="btn btn-info btn-lg px-5 shadow" onClick={this.handlePorto}>Portfolio</button>
             </div>
           </div>
        </div>

@@ -27,9 +27,12 @@ class CurrConvert  extends React.Component {
       uang: 0,
       sumber: 'USD',
       tujuan: 'USD',
-      exchangeRateSumber: 0,
-      exchangeRateTujuan: 0,
-      hasil: 0
+      hasil: 0,
+
+      renderedUang: 0,
+      renderedSumber: 'USD',
+      renderedTujuan: 'USD',
+      renderedHasil: 0
     }
 
     this.populateDropDown = this.populateDropDown.bind(this);
@@ -38,17 +41,19 @@ class CurrConvert  extends React.Component {
     this.handleChangeUang = this.handleChangeUang.bind(this);
     this.handleAPICall = this.handleAPICall.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleCopy = this.handleCopy.bind(this);
+    this.renderElement = this.renderElement.bind(this);
   }
 
-  handleDropdownChangeSumber (event){
+  handleDropdownChangeSumber(event){
     this.setState({sumber: event.target.value});
   }
 
-  handleDropdownChangeTujuan (event){
+  handleDropdownChangeTujuan(event){
     this.setState({tujuan: event.target.value});
   }
 
-  handleChangeUang (event){
+  handleChangeUang(event){
     this.setState({uang: event.target.value});
   }
 
@@ -68,7 +73,7 @@ class CurrConvert  extends React.Component {
         console.log(response)
         this.setState({
           hasil: response.data[this.state.tujuan].value * this.state.uang
-        })
+        }, this.renderElement)
     });
   }
 
@@ -78,10 +83,25 @@ class CurrConvert  extends React.Component {
     console.log(this.state);
   }
 
+  handleCopy(){
+    const { renderedHasil } = this.state;
+    navigator.clipboard.writeText(renderedHasil.toString());
+  }
+
+  renderElement(){
+    this.setState({
+      renderedUang: this.state.uang,
+      renderedSumber: this.state.sumber,
+      renderedTujuan: this.state.tujuan,
+      renderedHasil: this.state.hasil
+    });
+  }
+
   render()  {
     return (
       <div className="container p-3 g-4">
         <div className="text-center h1 mb-2 bg-light pb-2 edge-round">Currency Converter GIO</div>
+        <p className="lead px-5">Exchange rate akan diupdate setiap kali kalkulasi. Tolong untuk tidak menggunakan terlalu banyak karena terdapat limit dari pengambilan data dari API</p>
         <hr />
 
         <div className="row">
@@ -135,19 +155,16 @@ class CurrConvert  extends React.Component {
 
             <div className="lead text-center">
               <b>From:</b> <br /> 
-              {this.state.uang} {this.state.sumber} <br />
+              {this.state.renderedUang} {this.state.renderedSumber} <br />
               <hr />
               <b>To:</b> <br />
-              {this.state.hasil} {this.state.tujuan}
+              {this.state.renderedHasil} {this.state.renderedTujuan}
             </div>
             <hr />
 
-            <div className="text-center py-2">
-              <div className="py-4"></div>  
-              <div className="py-2"></div>  
-              <div className="py-1"></div>  
-            
-              <button type="button" class="btn btn-block py-2  btn-primary btn-sm shadow" onClick={this.handleCopy}>Copy Hasil</button>
+            <div className="text-center pb-2 pt-1">
+          
+              <button type="button" class="btn btn-block py-2 btn-primary btn-sm shadow" onClick={this.handleCopy}>Copy Hasil</button>
             </div>
           </div></div>  
         </div> 
