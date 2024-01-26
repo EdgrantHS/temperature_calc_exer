@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import TempConvert from './TempConvert';
-import CurrConvert from './CurrConvert';
 import Pemilihan from './Pemilihan';
 
 // const renderTemperature = true;
@@ -14,11 +12,7 @@ const renderCurrency = true;
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <div className="bg-image" style={{ "backgroundImage": "url(./gio.jpg)", "min-height": "100vh", "width": "100wh" }}>
-      {renderTemperature && <TempConvert />}
-      {renderCurrency && <CurrConvert />}
-    </div> */}
-  <Pemilihan />
+    <Pemilihan />
   </React.StrictMode>
 );
 
