@@ -116,7 +116,7 @@ class CurrConvert  extends React.Component {
             </div>
             
             <div className="row text-center gx-5">
-              <div className="col-md-4">
+              <div className="col-md-3">
                 <div className="p-4 my-2 bg-primary rounded text-white shadow">
                   <p className="lead"><b>Edgrant</b></p>
                   <p>Saya ingin berterima kasih pada edgrant karena telah membuat website saya</p>
@@ -135,7 +135,7 @@ class CurrConvert  extends React.Component {
                   <p>Saya ingin berterima kasih pada mereka karena sudah saya menggunakan fotonya</p>
                 </div>
               </div>
-              <div className="col-md-2">
+              <div className="col-md-3">
                 <div className="p-4 my-2 bg-primary rounded text-white shadow">
                   <p className="lead"><b>Windiarta</b></p>
                   <p>Saya ingin berterima kasih pada kakak saya, karena telat menyuruh saya belajar webdev</p>
@@ -148,8 +148,8 @@ class CurrConvert  extends React.Component {
               <div className="col-md-3">
                 <div className="p-4 my-2 bg-info rounded text-white shadow">
                   <p className="lead"><b>Apa itu Framework</b></p>
-                  <p>Alat yang membantu penulisan kode agar terstandardisasi</p>
-                  <p>Framwork js membantu pengaturan logika website dengan konsisten</p>
+                  <p>Alat / library yang membantu penulisan kode standar dan terstruktur </p>
+                  <p>Dalam JavaScript, framework menyediakan cara kerja untuk membangun dan mengelola aplikasi web</p>
                 </div>
               </div>
               <div className="col-md-5">

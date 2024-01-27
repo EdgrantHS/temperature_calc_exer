@@ -17,7 +17,11 @@ const options = [
   'NZD',
   'SEK',
   'KRW',
-  'IDR'
+  'IDR',
+  'SGD',
+  'THB',
+  'PHP',
+  'BTC'
 ]
 
 class CurrConvert  extends React.Component {
