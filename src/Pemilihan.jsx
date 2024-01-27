@@ -48,7 +48,7 @@ class Pemilihan extends React.Component {
       (this.state.pilihan === 0) ? 
         <div>
           <div className='bg-title text-left text-white p-4 mb-5 height-title'>
-            <img src={process.env.PUBLIC_URL + '/exer.svg'} alt="Logo Exer" className='shadow img-fluid my-5 mx-5' style={{ "width": '50%' }}/>
+            <img src={process.env.PUBLIC_URL + '/exer.svg'} alt="Logo Exer" className='img-fluid my-5 mx-5' style={{ "width": '50%' }}/>
             <p className="h1-title mx-5">Tugas Open Recruitment</p> 
             <p className="h2-title mx-5">Exercise 2024</p> 
             <div className='fixed-bottom'>
