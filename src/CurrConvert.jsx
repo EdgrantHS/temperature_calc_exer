@@ -104,8 +104,8 @@ class CurrConvert  extends React.Component {
   render()  {
     return (
       <div className="container p-3 g-4">
-        <div className="text-center h1 mb-2 bg-light pb-2 edge-round">Currency Converter GIO</div>
-        <p className="lead px-5">Exchange rate akan diupdate setiap kali kalkulasi. Tolong untuk tidak menggunakan terlalu banyak karena terdapat limit dari pengambilan data dari API</p>
+        <div className="text-center h1 mb-2 bg-bar p-2 text-white edge-round">Currency Converter GIO</div>
+        <p className="lead px-5 text-white">Exchange rate akan diupdate setiap kali kalkulasi. Tolong untuk tidak menggunakan terlalu banyak karena terdapat limit dari pengambilan data dari API</p>
         <hr />
 
         <div className="row">

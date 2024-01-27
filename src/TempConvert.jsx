@@ -103,7 +103,7 @@ class TempConvert extends React.Component {
   render()  {
     return (
       <div className="container p-3 g-4">
-        <div className="text-center h1 mb-2 bg-light pb-2 edge-round">Temperature Converter GIO</div>
+        <div className="text-center h1 mb-2 bg-bar p-2 text-white edge-round">Temperature Converter GIO</div>
         <hr />
 
         <div className="row">

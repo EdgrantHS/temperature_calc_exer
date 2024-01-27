@@ -46,26 +46,29 @@ class Pemilihan extends React.Component {
   render(){
     return(
       (this.state.pilihan === 0) ? 
-        <div className="container text-center">
-          <p className="h1">Tugas Open Recruitment</p> 
-          <p className="h2">Exercise 2024</p> 
-          <hr className='d-none d-md-block'/>
-            <img src={process.env.PUBLIC_URL + '/gio.png'} alt="GIO KEREN BANGET" className='shadow d-md-block d-none img-fluid rounded mx-auto' style={{ "max-width": '50%' }}/>
-          <hr />
-          <div className="row py-2">
-            <div className="col-md-6 my-2">
-              <button className="btn btn-primary btn-block py-2 btn-lg" onClick={this.handlePilihSuhu}>Temperature Calculator</button>
-            </div>
-            <div className="col-md-6 my-2">
-              <button className="btn btn-secondary btn-block py-2 btn-lg" onClick={this.handlePilihCurrency}>Currency Calculator</button>
-            </div>
+        <div>
+          <div className='bg-title text-center text-white pt-4 mb-5'>
+            <p className="h1">Tugas Open Recruitment</p> 
+            <p className="h2">Exercise 2024</p> 
+            {/* <img src={process.env.PUBLIC_URL + '/gio.png'} alt="GIO KEREN BANGET" className='shadow d-md-block d-none img-fluid rounded mx-auto' style={{ "max-width": '50%' }}/> */}
+            <img src={process.env.PUBLIC_URL + '/exer.svg'} alt="Logo Exer" className='shadow d-md-block d-none img-fluid rounded mx-auto my-4' style={{ "max-width": '50%' }}/>
           </div>
-          <div className="row text-center">
-            <div className="col-12 py-4">
-              <button className="btn btn-info btn-lg px-5 shadow" onClick={this.handlePorto}>Portfolio</button>
+          <div className="container text-center bg-container">
+            <div className="row py-2">
+              <div className="col-md-6 my-2">
+                <button className="btn btn-primary btn-block py-2 btn-lg" onClick={this.handlePilihSuhu}>Temperature Calculator</button>
+              </div>
+              <div className="col-md-6 my-2">
+                <button className="btn btn-secondary btn-block py-2 btn-lg" onClick={this.handlePilihCurrency}>Currency Calculator</button>
+              </div>
             </div>
-          </div>
-       </div>
+            <div className="row text-center">
+              <div className="col-12 py-4">
+                <button className="btn btn-info btn-lg px-5 shadow" onClick={this.handlePorto}>Portfolio</button>
+              </div>
+            </div>
+        </div>
+      </div>
       :
       (this.state.pilihan === 1) ?
         <TempConvert back={this.handleBalik}/>

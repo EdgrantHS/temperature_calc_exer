@@ -7,7 +7,9 @@ import Pemilihan from './Pemilihan';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Pemilihan />
+    <div className="bg-color">
+      <Pemilihan />
+    </div>
   </React.StrictMode>
 );
 
