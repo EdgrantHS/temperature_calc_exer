@@ -42,7 +42,7 @@ export default class Page extends React.Component {
           </div>
           <div className="row text-center">
             <div className="col-12 py-4">
-              <button className="btn btn-info btn-lg px-5 shadow" onClick={this.props.handlePorto}>Portfolio</button>
+              <button className="btn bg-button btn-block very-curve btn-lg text-large px-5 shadow text-white border-white" onClick={this.props.handlePorto}>Profile</button>
             </div>
           </div>
         </div>

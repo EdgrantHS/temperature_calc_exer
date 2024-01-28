@@ -3,3 +3,16 @@
 .height-title{
   min-height: 92dvh;
 }
+
+.text-large{
+  font-size: 2rem !important;
+  color: white; /* Add this line */
+}
+
+.bg-button{
+  background: linear-gradient(142deg, rgba(113, 55, 112, 1) 0%, rgba(70, 48, 112, 1) 100%);
+}
+
+.bg-button:hover{
+  background: rgba(113, 55, 112, 1);
+}

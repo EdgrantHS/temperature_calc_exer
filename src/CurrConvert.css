@@ -1,17 +1,5 @@
 @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
 
-.red{
-    background-color: red;
-}
-
-.blue{
-    background-color: blue;
-}
-
-.edge-round{
-    border-radius: 15px;
-}
-
 .select-style {
     width: 100%;
     height: 35px;
@@ -36,5 +24,23 @@
     backdrop-filter: blur(5px);
     font-family: 'Poppins', sans-serif;
     /* Note: backdrop-filter has minimal browser support */
+    border: 1px solid #FFFFFF;
+}
+
+.very-round {
+    border-radius: 50px;
+}
+
+.edge-round {
+    border-radius: 15px;
+}
+
+.bg-conatiner {
+    background: linear-gradient(142deg, rgb(113, 55, 77) 0%, rgb(76, 48, 112) 100%);
+    border: 1px solid #FFFFFF;
+}
+
+.bg-output {
+    background: linear-gradient(142deg, rgb(113, 55, 77) 100%, rgb(76, 48, 112) 0%);
     border: 1px solid #FFFFFF;
 }

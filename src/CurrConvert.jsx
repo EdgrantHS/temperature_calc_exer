@@ -109,8 +109,8 @@ class CurrConvert  extends React.Component {
         <hr />
 
         <div className="row">
-          <div className="col-md-6 mb-3"><div className="bg-secondary px-4 pb-2 pt-3 text-white shadow edge-round">
-            <div className="text-center h3">Input Currency</div>
+          <div className="col-md-6 mb-3"><div className="bg-output px-4 pb-2 pt-3 text-white shadow edge-round">
+            <div className="text-center h3 bg-bar p-3 very-round">Input Currency</div>
             <hr />
 
             <form onSubmit={this.handleSubmit}>
@@ -153,9 +153,9 @@ class CurrConvert  extends React.Component {
 
           </div></div>  
 
-          <div className="col-md-6"><div className="bg-info p-3 text-white shadow edge-round">
-            <div className="text-center h3">Output Currency</div>
-            <hr />
+          <div className="col-md-6"><div className="bg-container p-3 text-white shadow edge-round">
+              <div className="text-center h3 bg-bar p-3 very-round">Output Currency</div>
+              <hr />
 
             <div className="lead text-center">
               <b>From:</b> <br /> 
