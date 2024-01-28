@@ -1,33 +1,21 @@
 import "./Navbar.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import { Navbar, Nav} from 'react-bootstrap';
 
-function Navbar(props) {
-
-
+function MyNavbar(props) {
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-purple px-5 py-3 sticky-top">
-      <a class="navbar-brand" href="https://www.exerciseftui.com/home"><img src={process.env.PUBLIC_URL + '/exer.svg'} alt="logo"/></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <div class="nav-link" onClick={props.handleBalik}>Home</div>
-          </li>
-          <li class="nav-item">
-            <div class="nav-link" onClick={props.handlePilihCurrency}>Currency</div>
-          </li>
-          <li class="nav-item">
-            <div class="nav-link" onClick={props.handlePilihSuhu}>Temperature</div>
-          </li>
-          <li class="nav-item">
-            <div class="nav-link" onClick={props.handlePorto}>Profile</div>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <Navbar className="navbar navbar-expand-lg navbar-dark bg-purple px-5 py-3 sticky-top" bg="dark" expand="lg">
+      <Navbar.Brand onClick={props.handleBalik}><img src={process.env.PUBLIC_URL + '/exer.svg'} alt="logo"/></Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          <Nav.Link onClick={props.handlePilihCurrency}>Currency</Nav.Link>
+          <Nav.Link onClick={props.handlePilihSuhu}>Temperature</Nav.Link>
+          <Nav.Link onClick={props.handlePorto}>Profile</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }
 
-export default Navbar;
+export default MyNavbar;
