@@ -1,0 +1,21 @@
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
+
+.button-size{
+    font-size: 20px;
+}
+
+.nav-text-color{
+    color: #fff;
+}
+
+nav{
+    background: linear-gradient(rgba(53, 28, 55, 0.97), rgba(53, 28, 55, 0.97));
+    backdrop-filter: blur(15px);
+    border-bottom: #fff solid 1px;
+}
+
+.custom-dropdown {
+    left: auto;
+    right: 0;
+    transform: translate3d(0px, 38px, 0px);
+}
