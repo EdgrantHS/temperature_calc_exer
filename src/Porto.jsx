@@ -48,7 +48,7 @@ class Porto extends React.Component {
 
             <div className="row text-center gx-5">
               <div className="col-md-12">
-                <div className="pt-3 pb-1 my-2 bg-success rounded text-white shadow">
+                <div className="pt-3 pb-1 mb-2 mt-5 bg-success rounded text-white shadow">
                   <p className="lead"><b>Terima Kasih</b></p>
                   <p>saya ingin berterima kasih pada beberapa orang</p>
                 </div>
@@ -71,7 +71,7 @@ class Porto extends React.Component {
               </div>
               <div className="col-md-3">
                 <div className="p-4 rounded my-2 bg-primary rounded text-white shadow">
-                  <p className="lead"><b>Gio, Nikolas, Wendy, Satrio</b></p>
+                  <p className="lead"><b>Nikolas, Wendy, Satrio</b></p>
                   <p>Saya ingin berterima kasih pada mereka karena sudah saya menggunakan fotonya</p>
                 </div>
               </div>

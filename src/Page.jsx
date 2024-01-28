@@ -5,15 +5,34 @@ export default class Page extends React.Component {
   render() {
     return(
       <div>
-        <div className='bg-title text-left text-white p-4 mb-5 height-title'>
-          <img src={process.env.PUBLIC_URL + '/exer.svg'} alt="Logo Exer" className='img-fluid my-5 mx-5' style={{ "width": '50%' }}/>
-          <p className="h1-title mx-5 mt-5">Tugas Open Recruitment</p> 
-          <p className="h2-title mx-5">Exercise 2024</p> 
-          <div className='fixed-bottom'>
-            <p className="h3-title mx-5 text-right my-2">
+        <div className='bg-title text-white p-4 mb-5 height-title'>
+          {/* screen mobile */}
+          <p className="h2-title mx-5 mt-5 d-md-none text-center">Exersice 2024</p>
+          <p className="h3-title mx-5 d-md-none text-center">Tugas Open Recruitment</p>
+          <div className="text-center">
+            <img src={process.env.PUBLIC_URL + '/exer.svg'} alt="Logo Exer" className='img-fluid my-5 mx-5 d-md-none text-center' style={{ "width": '50%' }}/>
+          </div>
+
+          <div className='fixed-bottom d-md-none text-center'>
+            <p className="h3-title mx-5 my-2">
               Made by:
             </p>
-            <p className="h3-title mx-5 text-right mb-5">
+            <p className="h3-title mx-5 mb-5">
+              Edgrant Henderson Suryajaya
+              <br />
+              Teknik Komputer 2023
+            </p>
+          </div>
+
+          {/* screen desktop */}
+          <img src={process.env.PUBLIC_URL + '/exer.svg'} alt="Logo Exer" className='img-fluid my-5 mx-5 d-none d-md-block' style={{ "width": '50%' }}/>
+          <p className="h1-title mx-5 mt-5 d-none d-md-block">Tugas Open Recruitment</p> 
+          <p className="h2-title mx-5 d-none d-md-block">Exercise 2024</p> 
+          <div className='fixed-bottom'>
+            <p className="h3-title mx-5 text-right my-2 d-none d-md-block">
+              Made by:
+            </p>
+            <p className="h3-title mx-5 text-right mb-5 d-none d-md-block">
               Edgrant Henderson Suryajaya
               <br />
               Teknik Komputer 2023
