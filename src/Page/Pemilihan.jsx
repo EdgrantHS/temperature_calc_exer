@@ -4,7 +4,7 @@ import TempConvert from './TempConvert';
 import CurrConvert from './CurrConvert';
 import Porto from './Porto';
 import Page from './Page'; 
-import Navbar from './Navbar';
+import Navbar from '../Component/Navbar';
 
 class Pemilihan extends React.Component {
   constructor(props) {
