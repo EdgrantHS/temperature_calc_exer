@@ -57,7 +57,7 @@ class Pemilihan extends React.Component {
         :
         this.state.pilihan === 2 ?
           <CurrConvert back={this.handleBalik}/>
-        :
+        : 
           <Porto back={this.handleBalik}/>
         }
       </div> 

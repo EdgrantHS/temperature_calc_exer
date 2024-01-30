@@ -1,5 +1,6 @@
 import './TempConvert.css';
 import React from 'react';
+import { Modal, Button } from 'react-bootstrap';
 
 class TempConvert extends React.Component {
   constructor(props) {
@@ -13,7 +14,9 @@ class TempConvert extends React.Component {
       renderedSuhu: 0,
       renderedSumber: 'celcius',
       renderedTujuan: 'celcius',
-      renderedHasil: 0
+      renderedHasil: 0,
+
+      showModal: false
     }
 
     this.calculate = this.calculate.bind(this);
@@ -23,6 +26,7 @@ class TempConvert extends React.Component {
     this.handleChangeTujuan = this.handleChangeTujuan.bind(this);
     this.handleCopy = this.handleCopy.bind(this);
     this.renderElement = this.renderElement.bind(this);
+    this.rumusStr = this.rumusStr.bind(this);
   }
 
   
@@ -62,6 +66,14 @@ class TempConvert extends React.Component {
     const { renderedHasil } = this.state;
     navigator.clipboard.writeText(renderedHasil.toString());
   }
+  
+  handleOpenModal = () => {
+    this.setState({ showModal: true });
+  }
+
+  handleCloseModal = () => {
+    this.setState({ showModal: false });
+  }
 
   calculate(){
     let suhu = this.state.suhu;
@@ -98,6 +110,38 @@ class TempConvert extends React.Component {
     this.setState({
       hasil: hasil
     }, this.renderElement);
+  }
+
+  rumusStr(){
+    let suhu = this.state.renderedSuhu;
+    let sumber = this.state.renderedSumber;
+    let tujuan = this.state.renderedTujuan;
+
+    if(sumber === 'celcius'){
+      if(tujuan === 'celcius'){
+        return suhu + '°C' + ' = ' + suhu + '°C'; 
+      }else if(tujuan === 'ferenheit'){
+        return suhu + '°C' + ' = ' + '(' + suhu + ' * 9/5) + 32' + ' = ' + ((suhu * 9/5) + 32) + '°F';
+      }else if(tujuan === 'kelvin'){
+        return suhu + '°C' + ' = ' + suhu + ' + 273.15' + ' = ' + (Number(suhu) + 273.15) + 'K';
+      }
+    }else if(sumber === 'ferenheit'){
+      if(tujuan === 'celcius'){
+        return suhu + '°F' + ' = ' + '(' + suhu + ' - 32) * 5/9' + ' = ' + ((suhu - 32) * 5/9) + '°C';
+      }else if(tujuan === 'ferenheit'){
+        return suhu + '°F' + ' = ' + suhu + '°F';
+      }else if(tujuan === 'kelvin'){
+        return suhu + '°F' + ' = ' + '(' + suhu + ' - 32) * 5/9 + 273.15' + ' = ' + ((suhu - 32) * 5/9 + 273.15) + 'K';
+      }
+    }else if(sumber === 'kelvin'){
+      if(tujuan === 'celcius'){
+        return suhu + 'K' + ' = ' + suhu + ' - 273.15' + ' = ' + (suhu - 273.15) + '°C';
+      }else if(tujuan === 'ferenheit'){
+        return suhu + 'K' + ' = ' + '(' + suhu + ' - 273.15) * 9/5 + 32' + ' = ' + ((suhu - 273.15) * 9/5 + 32) + '°F';
+      }else if(tujuan === 'kelvin'){
+        return suhu + 'K' + ' = ' + suhu + 'K';
+      }
+    }
   }
 
   render()  {
@@ -225,12 +269,26 @@ class TempConvert extends React.Component {
             <hr />
 
             <div className="text-center py-2">
-              <div className="py-4"></div>  
-              <div className="py-2"></div>  
-              <div className="py-1"></div>  
-            
-              <button type="button" class="btn btn-block py-2  btn-primary btn-sm shadow" onClick={this.handleCopy}>Copy Hasil</button>
-            </div>
+              <Button variant="secondary" className='my-3' onClick={this.handleOpenModal} >
+                Show Perhitungan
+              </Button>
+
+              <Modal show={this.state.showModal} onHide={this.handleCloseModal} centered>
+                <Modal.Header>
+                  <Modal.Title>Perhitungan</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  {this.rumusStr()}
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={this.handleCloseModal}>
+                    Close
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+
+            <button type="button" className="btn btn-block py-2  btn-primary btn-sm shadow" onClick={this.handleCopy}>Copy Hasil</button>
+          </div>
           </div></div>  
         </div> 
         <div className="d-block text-center py-5">
@@ -241,4 +299,5 @@ class TempConvert extends React.Component {
   }
 }
 
-export default TempConvert;
+  export default TempConvert;
+    
