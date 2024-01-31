@@ -1,10 +1,36 @@
 import React from "react";
 import './Page.css';
+// import axios from "axios";
 
 export default class Page extends React.Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     apiData: [],
+  //   };
+
+  //   this.handleAPI = this.handleAPI.bind(this);
+  // }
+
+  // handleAPI = () => {
+  //   axios.get('https://catfact.ninja/fact')
+  //   .then((response) => {
+  //     this.setState({ apiData: response.data.fact});
+  //   })
+  //   .catch((error) => {
+  //     console.log(error);
+  //   });
+  // }
+
+  // componentDidMount() {
+  //   this.handleAPI();
+  //   console.log("data: " + this.state.apiData);
+  // }
+
   render() {
     return(
       <div>
+        {/* <h1>{this.state.apiData}</h1> */}
         <div className='bg-title text-white p-4 mb-5 height-title'>
           {/* screen mobile */}
           <p className="h2-title mx-5 mt-5 d-md-none text-center">Exersice 2024</p>

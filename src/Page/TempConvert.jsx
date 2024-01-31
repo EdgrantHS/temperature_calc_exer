@@ -119,27 +119,27 @@ class TempConvert extends React.Component {
 
     if(sumber === 'celcius'){
       if(tujuan === 'celcius'){
-        return suhu + '°C' + ' = ' + suhu + '°C'; 
+        return `${suhu}°C = ${suhu}°C`; 
       }else if(tujuan === 'ferenheit'){
-        return suhu + '°C' + ' = ' + '(' + suhu + ' * 9/5) + 32' + ' = ' + ((suhu * 9/5) + 32) + '°F';
+        return `${suhu}°C = (${suhu} * 9/5) + 32 = ${(suhu * 9/5) + 32}°F`;
       }else if(tujuan === 'kelvin'){
-        return suhu + '°C' + ' = ' + suhu + ' + 273.15' + ' = ' + (Number(suhu) + 273.15) + 'K';
+        return `${suhu}°C = ${suhu} + 273.15 = ${(Number(suhu) + 273.15)}K`;
       }
     }else if(sumber === 'ferenheit'){
       if(tujuan === 'celcius'){
-        return suhu + '°F' + ' = ' + '(' + suhu + ' - 32) * 5/9' + ' = ' + ((suhu - 32) * 5/9) + '°C';
+        return `${suhu}°F = (${suhu} - 32) * 5/9 = ${((suhu - 32) * 5/9)}°C`;
       }else if(tujuan === 'ferenheit'){
-        return suhu + '°F' + ' = ' + suhu + '°F';
+        return `${suhu}°F = ${suhu}°F`;
       }else if(tujuan === 'kelvin'){
-        return suhu + '°F' + ' = ' + '(' + suhu + ' - 32) * 5/9 + 273.15' + ' = ' + ((suhu - 32) * 5/9 + 273.15) + 'K';
+        return `${suhu}°F = (${suhu} - 32) * 5/9 + 273.15 = ${((suhu - 32) * 5/9 + 273.15)}K`;
       }
     }else if(sumber === 'kelvin'){
       if(tujuan === 'celcius'){
-        return suhu + 'K' + ' = ' + suhu + ' - 273.15' + ' = ' + (suhu - 273.15) + '°C';
+        return `${suhu}K = ${suhu} - 273.15 = ${(suhu - 273.15)}°C`;
       }else if(tujuan === 'ferenheit'){
-        return suhu + 'K' + ' = ' + '(' + suhu + ' - 273.15) * 9/5 + 32' + ' = ' + ((suhu - 273.15) * 9/5 + 32) + '°F';
+        return `${suhu}K = (${suhu} - 273.15) * 9/5 + 32 = ${((suhu - 273.15) * 9/5 + 32)}°F`;
       }else if(tujuan === 'kelvin'){
-        return suhu + 'K' + ' = ' + suhu + 'K';
+        return `${suhu}K = ${suhu}K`;
       }
     }
   }
