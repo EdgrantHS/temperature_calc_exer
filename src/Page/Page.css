@@ -10,9 +10,27 @@
 }
 
 .bg-button{
-  background: linear-gradient(142deg, rgba(113, 55, 112, 1) 0%, rgba(70, 48, 112, 1) 100%);
+  background: linear-gradient(180deg, rgba(113, 55, 112, 1) 0%, rgba(70, 48, 112, 1) 100%);
 }
 
 .bg-button:hover{
+  background: rgba(113, 55, 112, 1);
+}
+
+.bg-temp{
+  background: linear-gradient(180deg, rgba(113, 55, 112, 1) 0%, rgb(157, 79, 37) 100%);
+  border: 1px solid #FFF;
+}
+
+.bg-temp:hover{
+  background: rgba(113, 55, 112, 1);
+}
+
+.bg-curr{
+  background: linear-gradient(180deg, rgba(113, 55, 112, 1) 0%, rgb(0, 87, 87) 100%);
+  border: 1px solid #FFF;
+}
+
+.bg-curr:hover{
   background: rgba(113, 55, 112, 1);
 }

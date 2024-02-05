@@ -71,14 +71,14 @@ export default class Page extends React.Component {
         <div className="container text-center bg-container outer-curve">
           <div className="row py-2">
             <div className="col-md-6 my-2">
-              <button className="btn btn-primary btn-block py-2 btn-lg very-curve" onClick={this.props.handlePilihSuhu}>
-                <img src={process.env.PUBLIC_URL + '/temperature.svg'} alt="Logo Temperature" className='img-fluid my-5 mx-5' style={{ "width": '50%' }}/>
+              <button className="btn border-white btn-block py-2 btn-lg very-curve text-white bg-temp" onClick={this.props.handlePilihSuhu}>
+                <img src={process.env.PUBLIC_URL + '/temperature.svg'} alt="Logo Temperature" className='img-fluid my-5 mx-5 ' style={{ "width": '50%' }}/>
                 <hr className='bg-white'/>
                 Temperature Calculator
               </button>
             </div>
             <div className="col-md-6 my-2">
-              <button className="btn btn-secondary btn-block py-2 btn-lg very-curve" onClick={this.props.handlePilihCurrency}>
+              <button className="btn border-white btn-block py-2 btn-lg very-curve text-white bg-curr" onClick={this.props.handlePilihCurrency}>
                 <img src={process.env.PUBLIC_URL + '/money.svg'} alt="Logo Temperature" className='img-fluid my-5 mx-5' style={{ "width": '50%' }}/>
                 <hr className='bg-white'/>
                 Currency Calculator
